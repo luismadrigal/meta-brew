@@ -52,7 +52,6 @@ module Cask
       attr_reader :raw_version
 
       def initialize(raw_version)
-        # ap "Versioning.... Happy in version class"
         @raw_version = raw_version
         super(raw_version.to_s)
       end
@@ -128,7 +127,7 @@ module Cask
         puts "Version Version"
         return self if empty? || latest?
 
-        ap self.class.new(self)
+        self.class.new(yield)
       end
     end
   end

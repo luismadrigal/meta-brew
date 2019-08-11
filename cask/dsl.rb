@@ -41,7 +41,6 @@ module Cask
       @name ||= []
       return @name if args.empty?
 
-      # ap
       @name.concat(args.flatten).first
     end
 
@@ -148,8 +147,6 @@ module Cask
           raise CaskInvalidError.new(cask, "invalid 'version' value: '#{arg.inspect}'")
         end
 
-        # ap "from inside DSL version "
-        # ap arg
         DSL::Version.new(arg)
       end
     end
