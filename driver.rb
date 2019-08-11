@@ -36,7 +36,7 @@ DSL_METHODS.each do |method_name|
 
     if method_name.to_s == 'version'
       ap "inside version conditional"
-        @x = Cask::DSL::Version.new("0.9.7")
+      @x = Cask::DSL::Version.new($v)
     end
 
     @dsl.send(method_name, *args, &block)
